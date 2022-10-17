@@ -8,7 +8,7 @@ import { WsGuard } from "../auth/guard/ws.guard";
 
 
 
-@WebSocketGateway(parseInt(process.env.PORT),{ cors: "*", path: '/comments'})
+@WebSocketGateway(parseInt(process.env.PORT),{ cors: "*"})
 export class CommentGateway {
   constructor(private commentService: CommentService) {
   }
