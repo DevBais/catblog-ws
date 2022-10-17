@@ -6,9 +6,12 @@ import { GetUser } from "../auth/decorator";
 import { CommentService } from "./comment.service";
 import { WsGuard } from "../auth/guard/ws.guard";
 
-@WebSocketGateway(parseInt(process.env.PORT), { cors: "*" })
+
+
+@WebSocketGateway(parseInt(process.env.PORT),{ cors: "*", path: '/comments'})
 export class CommentGateway {
   constructor(private commentService: CommentService) {
+  }
 
   @WebSocketServer()
   server;
